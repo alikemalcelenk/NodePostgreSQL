@@ -1,0 +1,24 @@
+{
+  "name": "nodepostgresql",
+  "version": "1.0.0",
+  "description": "Example Node.js Project with PostgreSQL DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikemalcelenk/NodePostgreSQL.git"
+  },
+  "keywords": [],
+  "author": "Ali Kemal Çelenk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alikemalcelenk/NodePostgreSQL/issues"
+  },
+  "homepage": "https://github.com/alikemalcelenk/NodePostgreSQL#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0"
+  }
+}
