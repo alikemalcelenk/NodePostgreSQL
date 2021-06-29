@@ -1,18 +1,8 @@
 const router = require('express').Router();
 
-//DB connection
-const pool = require('../helper/db');
+// controllers
+const LearningPathController = require('../controllers/learningPath');
 
-//read learningpaths
-router.get('/', async (req, res) => {
-  pool
-    .query('SELECT * FROM learningpaths')
-    .then((lp) => {
-      res.json(lp.rows);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
-});
+router.get('/', LearningPathController.getLearningPaths);
 
 module.exports = router;
