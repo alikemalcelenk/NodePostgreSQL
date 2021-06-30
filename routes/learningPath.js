@@ -5,5 +5,6 @@ const LearningPathController = require('../controllers/learningPath');
 
 router.get('/', LearningPathController.getLearningPaths);
 router.post('/', LearningPathController.addLearningPath);
+router.put('/:lpId', LearningPathController.updateLearningPath);
 
 module.exports = router;

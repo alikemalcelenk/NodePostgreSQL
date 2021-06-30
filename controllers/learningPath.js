@@ -16,9 +16,22 @@ exports.getLearningPaths = (req, res) => {
 };
 
 exports.addLearningPath = (req, res) => {
-  const { description, mipId } = req.body;
+  const { description, mip_id } = req.body;
   pool
-    .query(LearningPathQueries.addLearningPath, [description, mipId])
+    .query(LearningPathQueries.addLearningPath, [description, mip_id])
+    .then((lp) => {
+      res.status(200).json(lp.rows);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+};
+
+exports.updateLearningPath = (req, res) => {
+  const { lpId } = req.params;
+  const { description, mip_id } = req.body;
+  pool
+    .query(LearningPathQueries.updateLearningPath, [lpId, description, mip_id])
     .then((lp) => {
       res.status(200).json(lp.rows);
     })
