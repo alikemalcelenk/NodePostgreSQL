@@ -36,7 +36,18 @@ exports.updateLearningPath = (req, res) => {
       res.status(200).json(lp.rows);
     })
     .catch((err) => {
-      console.log(err);
+      res.status(500).json(err);
+    });
+};
+
+exports.deleteLearningPath = (req, res) => {
+  const { lpId } = req.params;
+  pool
+    .query(LearningPathQueries.deleteLearningPath, [lpId])
+    .then((lp) => {
+      res.status(200).json(lp.rows);
+    })
+    .catch((err) => {
       res.status(500).json(err);
     });
 };
