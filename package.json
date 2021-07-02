@@ -1,7 +1,7 @@
 {
   "name": "nodepostgresql",
   "version": "1.0.0",
-  "description": "Example Node.js Project with PostgreSQL DB",
+  "description": "Example Node.js project using a PostgreSQL database.",
   "main": "index.js",
   "scripts": {
     "start": "node app",

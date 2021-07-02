@@ -16,9 +16,9 @@ exports.getLearningPaths = (req, res) => {
 };
 
 exports.addLearningPath = (req, res) => {
-  const { description, mip_id } = req.body;
+  const { description, mipId } = req.body;
   pool
-    .query(LearningPathQueries.addLearningPath, [description, mip_id])
+    .query(LearningPathQueries.addLearningPath, [description, mipId])
     .then((lp) => {
       res.status(200).json(lp.rows);
     })
@@ -28,10 +28,10 @@ exports.addLearningPath = (req, res) => {
 };
 
 exports.updateLearningPath = (req, res) => {
-  const { lpId } = req.params;
-  const { description, mip_id } = req.body;
+  const { id } = req.params;
+  const { description, mipId } = req.body;
   pool
-    .query(LearningPathQueries.updateLearningPath, [lpId, description, mip_id])
+    .query(LearningPathQueries.updateLearningPath, [id, description, mipId])
     .then((lp) => {
       res.status(200).json(lp.rows);
     })
@@ -41,9 +41,9 @@ exports.updateLearningPath = (req, res) => {
 };
 
 exports.deleteLearningPath = (req, res) => {
-  const { lpId } = req.params;
+  const { id } = req.params;
   pool
-    .query(LearningPathQueries.deleteLearningPath, [lpId])
+    .query(LearningPathQueries.deleteLearningPath, [id])
     .then((lp) => {
       res.status(200).json(lp.rows);
     })
